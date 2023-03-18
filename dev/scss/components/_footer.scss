@@ -1,0 +1,57 @@
+@use "./components/main" ;
+@use "./global";
+
+*{
+  font-family: 'Source Sans Pro', sans-serif;
+}
+$footer-text-color: grey;
+$hover-orange: #f15a24;
+
+// Footer
+// Footer Container
+
+.footer-container{
+
+    width: 100%;
+    border-top: 1px --color-black solid;
+
+    // Footer Inside Container
+    .footer-inside{
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    background-color: #ebebeb;
+    border-top: black 1px solid;
+    padding-left: 50px;
+    min-height: 300px;
+    padding-top: 20px;
+
+    }
+    li{
+        list-style: none;
+        padding-bottom: 15px;
+        font-size: 18px;
+        color: $footer-text-color;
+        &:hover {
+            color: $hover-orange; 
+            cursor: pointer;
+        }
+    }
+    // ------------------ MEDIA QUERIES ------------------ //
+
+    // Media Query for 500px and below
+    @media (max-width: 500px) {
+      .footer-inside {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    // Media Query for 370px and below
+    @media (max-width: 370px) {
+        .footer-inside {
+
+          display: block;
+          padding-left: 0px;
+          
+
+        }
+      }
+}

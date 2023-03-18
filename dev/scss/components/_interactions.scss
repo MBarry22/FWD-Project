@@ -1,0 +1,94 @@
+@use "./components/main" ;
+@use "./global";
+
+// smooth scroll
+html{
+    scroll-behavior: smooth;
+}
+
+// interactions container 
+.interactions-container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 75% 25%;
+}
+
+.top{
+    padding-top: 20px;
+}
+
+// interactions 
+.interactions{
+    display: flex;
+    padding-left: 70px;
+    img{
+        height: 50px;
+        padding-top: 50px;
+    }
+    a{
+        color: var(--color-orange);
+        font-size: 25px;
+        padding-left: 10px;
+
+    }
+}
+
+
+// up arrow
+#up-arrow{
+    scroll-behavior: smooth;
+    
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+
+// email
+.email{
+    display: flex;
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 30px;
+    white-space: nowrap;
+    padding-left: 40px;
+    width: 30%;
+    img{
+        height: 50px;
+    }
+    p{
+        font-size: large;
+
+    }
+}
+
+
+// ------------------ MEDIA QUERIES ------------------ //
+
+@media (max-width: 800px) {
+    .interactions-container{
+        grid-template-columns: 65% 35%;
+    }
+    .email{
+        padding-bottom: 30px;
+        padding-left: 40px;
+        
+    }
+  }
+
+// Media Query for 595px and below
+@media (max-width: 595px) {
+    .interactions-container {
+
+
+      grid-template-columns: repeat(1, 1fr);
+      padding-left: 0;
+      justify-content:start;
+      padding: 0;
+      width: 100%;
+    }
+    .email{
+        padding-top: 10px;
+        padding-left: 70px;
+    }
+  }
